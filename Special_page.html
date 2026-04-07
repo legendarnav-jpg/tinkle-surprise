@@ -1,0 +1,377 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Tinkle ❤️</title><link href="https://fonts.googleapis.com/css2?family=Poppins&family=Great+Vibes&family=Allura&display=swap" rel="stylesheet"><style>
+*{box-sizing:border-box;}button,input{outline:none;-webkit-tap-highlight-color:transparent;}
+button:focus,button:active{outline:none;box-shadow:none;}
+
+body{
+margin:0;height:100vh;overflow:hidden;
+font-family:'Poppins',sans-serif;color:white;
+display:flex;justify-content:center;align-items:center;
+text-align:center;
+background:linear-gradient(120deg,#000,#1a001a,#000);
+}
+
+/* hearts */
+.hearts span{
+position:fixed;top:-10%;color:#ffc0cb;font-size:14px;
+animation:fall linear infinite;
+}
+.hearts span:nth-child(1){left:10%;animation:fall 10s linear infinite;}
+.hearts span:nth-child(2){left:30%;animation:fall 12s linear infinite;}
+.hearts span:nth-child(3){left:50%;animation:fall 11s linear infinite;}
+.hearts span:nth-child(4){left:70%;animation:fall 13s linear infinite;}
+.hearts span:nth-child(5){left:90%;animation:fall 12s linear infinite;}
+
+@keyframes fall{
+0%{transform:translate3d(0,-10vh,0);}
+100%{transform:translate3d(0,120vh,0);}
+}
+
+/* bubbles */
+.bubbles span{
+position:fixed;bottom:-50px;border-radius:50%;
+background:rgba(255,182,193,0.2);
+animation:rise linear infinite;
+}
+.bubbles span:nth-child(1){left:20%;width:18px;height:18px;animation:rise 10s linear infinite;}
+.bubbles span:nth-child(2){left:40%;width:22px;height:22px;animation:rise 12s linear infinite;}
+.bubbles span:nth-child(3){left:60%;width:16px;height:16px;animation:rise 11s linear infinite;}
+.bubbles span:nth-child(4){left:80%;width:20px;height:20px;animation:rise 13s linear infinite;}
+
+@keyframes rise{
+0%{transform:translate3d(0,0,0);}
+100%{transform:translate3d(0,-120vh,0);}
+}
+
+/* intro */
+.intro{
+position:fixed;width:100%;height:100%;
+display:flex;justify-content:center;align-items:center;
+background:black;z-index:9999;padding:20px;
+}
+
+.intro-title{
+font-family:'Allura',cursive;
+font-size:clamp(28px,6vw,42px);
+color:#ff69b4;
+text-shadow:0 0 10px #ff69b4,0 0 25px #ff1493,0 0 40px #ff1493;
+line-height:1.4;
+}
+
+.start-btn{
+padding:14px 28px;border:none;border-radius:30px;
+background:#ffb6c1;color:#ff1493;font-weight:bold;
+margin-top:25px;
+box-shadow:0 0 10px #ff69b4,0 0 20px #ff69b4;
+}
+
+/* password */
+#lockScreen{
+position:fixed;top:0;left:0;width:100%;height:100%;
+background:black;display:flex;justify-content:center;
+align-items:center;z-index:10000;flex-direction:column;
+}
+
+/* slides */
+.container{width:95%;max-width:520px;position:relative;}
+
+.slide{
+position:absolute;width:100%;opacity:0;
+transform:translateX(50px);
+transition:.5s;
+display:flex;flex-direction:column;align-items:center;
+}
+
+.slide.active{
+opacity:1;transform:translateX(0);
+position:relative;
+}
+
+/* content */
+img{
+width:100%;max-width:480px;border-radius:12px;
+box-shadow:0 10px 25px rgba(255,105,180,0.3);
+}
+
+button{
+padding:12px 22px;margin:10px;border:none;
+border-radius:20px;cursor:pointer;font-weight:bold;
+box-shadow:0 5px 15px rgba(0,0,0,0.5);
+}
+
+.continue{background:white;color:red;}
+.yes{background:#4CAF50;color:white;}
+.no{background:#e74c3c;color:white;}
+
+.question{
+font-size:22px;
+text-shadow:0 0 8px rgba(255,255,255,0.5);
+}
+
+/* TYPEWRITER */
+.typewriter{
+font-size:19px;
+color:#d8ecff;
+text-shadow:0 0 8px rgba(200,230,255,0.6);
+line-height:1.7;
+}
+
+.typewriter span{
+display:block;
+opacity:0;
+}
+
+.typewriter span.show{
+animation:fadeIn 1s forwards;
+}
+
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(10px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+.love{
+font-family:'Great Vibes',cursive;
+font-size:70px;color:#ff69b4;
+text-shadow:0 0 15px #ff69b4,0 0 30px #ff1493;
+}
+
+/* final page */
+.final{display:flex;flex-direction:column;height:300px;}
+
+.top,.bottom{
+flex:1;display:flex;justify-content:center;align-items:center;
+font-family:'Great Vibes',cursive;font-size:44px;
+position:relative;
+}
+
+.top{
+color:#00c8ff;
+text-shadow:0 0 10px #00c8ff,0 0 25px #00c8ff,0 0 40px rgba(0,200,255,0.8);
+}
+
+.bottom{
+color:#ff69b4;
+text-shadow:0 0 10px #ff69b4,0 0 25px #ff1493,0 0 40px rgba(255,20,147,0.8);
+}
+
+.credit{position:absolute;right:10px;bottom:5px;font-size:12px;}
+
+hr{width:80%;}
+
+/* fireworks */
+#fireworks{
+position:fixed;top:0;left:0;width:100%;height:100%;
+pointer-events:none;display:none;
+}
+</style></head><body>
+
+<div id="lockScreen">
+<h2 style="color:#ff69b4;">Enter Password 💖</h2>
+<input id="passwordInput" type="password" placeholder="Enter secret..."
+style="padding:10px;border-radius:10px;border:none;margin:10px;width:220px;text-align:center;">
+<button onclick="checkPassword()">Unlock</button>
+</div><audio id="clickSound" src="bubble.mp3"></audio>
+<audio id="finalSound" src="chime.mp3"></audio>
+
+<canvas id="fireworks"></canvas>
+
+<div class="hearts"><span>❤</span><span>❤</span><span>❤</span><span>❤</span><span>❤</span></div>
+<div class="bubbles"><span></span><span></span><span></span><span></span></div><div id="introPage" class="intro">
+<div>
+<h1 class="intro-title">
+The surprise you always waited to know<br>
+is waiting for you now
+</h1>
+<button class="start-btn" onclick="startStory()">💌 Open Your Surprise</button>
+</div>
+</div><div class="container"><div class="slide active">
+<img src="tinkle1.jpg">
+<button class="continue" onclick="nextSlide()">Continue</button>
+</div><div class="slide">
+<img src="tinkle2.jpg">
+<button class="continue" onclick="nextSlide()">Continue</button>
+</div><div class="slide">
+<img src="tinkle1.png">
+<button class="continue" onclick="nextSlide()">Continue</button>
+</div><div class="slide">
+<img src="tinkle3.jpg">
+<button class="continue" onclick="nextSlide()">Continue</button>
+</div><div class="slide">
+<img src="tinkle2.png">
+<button class="continue" onclick="nextSlide()">Continue</button>
+</div><!-- PAGE 1 --><div class="slide">
+<div class="question typewriter">
+<span>You are...</span>
+<span>My Fairy, My Angel, My Sweet, My Treasure, My Everything.</span>
+<span>You are most Important to me.</span>
+<span>You are most Precious to me.</span>
+</div>
+<button class="continue" onclick="nextSlide()">Continue</button>
+</div><!-- PAGE 2 --><div class="slide">
+<div class="question typewriter">
+<span>You are my Queen, I'm your King.</span>
+<span>You are my Cutie Pie, I'm your Baby.</span>
+<span>We both are eachother's Secret.</span>
+<span>We both are eachother's Future.</span>
+</div>
+<button class="continue" onclick="nextSlide()">Continue</button>
+</div><div class="slide">
+<div class="question">We have many similarities right?</div>
+<button class="yes" onclick="saveAnswer('Similarity: Yes')">Yes</button>
+<button class="no" onclick="saveAnswer('Similarity: No')">No</button>
+</div><div class="slide">
+<div class="question">Will we have one more similarity today?</div>
+<button class="continue" onclick="nextSlide()">Continue</button>
+</div><div class="slide">
+<div class="love">I Love You</div>
+<button class="continue" onclick="nextSlideNoSound()">Continue</button>
+</div><div class="slide">
+<div class="question">How do you Feel?</div>
+<button class="yes" onclick="saveAnswer('Confession: Yes')">I Love You Tooooo ❤️❤️</button>
+<button class="no" onclick="saveAnswer('Confession: No')">Sorry But No</button>
+</div><div class="slide">
+<div class="final">
+<div class="top">I Love You<div class="credit">~by Arnav Jaiswal</div></div>
+<hr>
+<div class="bottom">I Love You Too<div class="credit">~by Sandra Nair</div></div>
+</div>
+</div></div><script>
+
+/* TELEGRAM */
+function sendToTelegram(msg){
+fetch("https://api.telegram.org/bot8730463401:AAHL1pUEi37dAy_rFtwhZcfwavV2EYGTfV4/sendMessage",{
+method:"POST",
+headers:{"Content-Type":"application/json"},
+body:JSON.stringify({chat_id:"8274944597",text:msg})
+}).catch(()=>{})
+}
+
+let answers=[]
+
+function saveAnswer(ans){
+answers.push(ans)
+sendToTelegram(ans)
+nextSlide()
+}
+
+/* PASSWORD */
+function checkPassword(){
+let pass=document.getElementById("passwordInput").value.trim()
+if(pass==="Special Surprise ❤️" || pass==="Special Surprise"){
+document.getElementById("lockScreen").style.display="none"
+}else{
+alert("Wrong password 😝")
+}
+}
+
+/* SOUND */
+let current=0
+const slides=document.querySelectorAll(".slide")
+const clickSound=document.getElementById("clickSound")
+const finalSound=document.getElementById("finalSound")
+
+function playClick(){
+clickSound.currentTime=0
+clickSound.play().catch(()=>{})
+}
+
+/* TYPEWRITER LOCK */
+function playTypingEffect(slide){
+const spans=slide.querySelectorAll(".typewriter span")
+const btn=slide.querySelector("button")
+
+btn.disabled=true
+btn.style.opacity="0.5"
+
+spans.forEach((span,index)=>{
+span.classList.remove("show")
+setTimeout(()=>{
+span.classList.add("show")
+if(index===spans.length-1){
+btn.disabled=false
+btn.style.opacity="1"
+}
+}, index * 4000)
+})
+}
+
+function startStory(){
+document.getElementById("introPage").remove()
+playClick()
+}
+
+function nextSlide(){
+if(current !== 5 && current !== 7){
+playClick()
+}
+
+slides[current].classList.remove("active")
+current++
+
+if(current<slides.length){
+slides[current].classList.add("active")
+
+if(slides[current].querySelector(".typewriter")){
+playTypingEffect(slides[current])
+}
+}
+
+if(current === slides.length-1){
+finalSound.play().catch(()=>{})
+sendToTelegram("FINAL:\n"+answers.join("\n"))
+startFireworks()
+}
+}
+
+function nextSlideNoSound(){
+slides[current].classList.remove("active")
+current++
+if(current<slides.length){
+slides[current].classList.add("active")
+
+if(slides[current].querySelector(".typewriter")){
+playTypingEffect(slides[current])
+}
+}
+}
+
+/* FIREWORKS */
+function startFireworks(){
+const canvas=document.getElementById("fireworks")
+canvas.style.display="block"
+const ctx=canvas.getContext("2d")
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let particles=[]
+
+function createFirework(){
+let x=Math.random()*canvas.width
+let y=Math.random()*canvas.height/2
+for(let i=0;i<50;i++){
+particles.push({x,y,vx:(Math.random()-0.5)*5,vy:(Math.random()-0.5)*5,life:100})
+}
+}
+
+setInterval(createFirework,700)
+
+function animate(){
+ctx.fillStyle="rgba(0,0,0,0.2)"
+ctx.fillRect(0,0,canvas.width,canvas.height)
+
+particles.forEach(p=>{
+p.x+=p.vx
+p.y+=p.vy
+p.life--
+ctx.fillStyle="hsl("+Math.random()*360+",100%,70%)"
+ctx.fillRect(p.x,p.y,2,2)
+})
+
+particles=particles.filter(p=>p.life>0)
+requestAnimationFrame(animate)
+}
+animate()
+}
+
+</script></body></html>
